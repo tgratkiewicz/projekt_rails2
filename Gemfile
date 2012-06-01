@@ -9,6 +9,8 @@ gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
 gem "bcrypt-ruby", :require => "bcrypt"
 
+gem 'bootstrap-sass'
+
 gem 'thin'
 gem 'json'
 gem 'taps'

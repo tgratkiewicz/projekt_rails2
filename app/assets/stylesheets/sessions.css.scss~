@@ -20,8 +20,8 @@ ul#nav a:hover { display: block; padding: 3px 6px 7px 6px; }
 ul#nav a.current { padding-bottom: 8px; }
 ul#nav a.current:hover { background: #e6dacf; color: #000; cursor: default; }
 
-div#content{ margin: 0 auto; padding: 60px 0; text-align: left; width: 720px; height: 300px}
-div#content img {  ; float: right; margin: 18px 0 0 20px; width: 150px; height: 150px; }
+div#content{ margin: 0 auto; padding: 20px 0; text-align: left; width: 720px; height: 300px}
+div#content img { border: 10px solid #000; float: right; margin: 18px 0 0 20px; }
 div#content h2 { border: solid #999; border-width: 0 0 5px 0; font-size: 28px; margin: 0; padding: 0 0 10px 0; }
 div#content p { margin: 0; padding: 4px 6px 10px 0; }
 

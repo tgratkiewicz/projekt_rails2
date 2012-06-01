@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @ad.name %></h1>
+<p>
+  <b>Nazwa:</b>
+  <%= @ad.name %>
+</p>
+
+<p>
+  <b>Opis:</b>
+  <%= @ad.description %>
+</p>
+
+<p>
+  <b>Cena:</b>
+  <%= @ad.price %>
+</p>
+
+<p>
+  <b>Email Sprzedawcy:</b>
+  <%= @ad.email %>
+</p>
+
+<p>
+  <b>Img url:</b>
+  <%= @ad.img_url %>
+</p>
+
+<% if current_user[:email] = 'admin@admin.com'    %>
+	<%= link_to 'Edytuj', edit_ad_path(@ad) %> |
+	<%= link_to 'Usuń', ad_path(@ad), :confirm => 'Czy napewno chcesz usunąć ogłoszenie?', :method => :delete %> |
+<% end %>
+<%= link_to 'Cofnij', ads_path %>

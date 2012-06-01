@@ -1,0 +1,37 @@
+<h1>Lista Wszystkich Ofert</h1>
+
+<table>
+  <tr>
+    <th>Obrazek</th>
+    <th>Nazwa</th>
+    <th>Cena</th>
+    <th>Sprzedawca</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ads.each do |ad| %>
+  <tr>
+    <td><img src="<%= ad.img_url %>" alt="" /></td>
+    <td><%= ad.name %></td>
+    <td><%= ad.price %></td>
+    <td><%= ad.email %></td>
+
+    <td><%= link_to 'Show', ad %></td>
+    
+
+	<% if current_user %>
+		 <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
+   		 <td><%= link_to 'Destroy', ad, confirm: 'Czy napewno chcesz usunac oferte ?', method: :delete %></td>
+	</tr>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+	<% if current_user %>
+		<%= link_to 'Dodaj ogloszenie', new_ad_path %>
+	<% end %>

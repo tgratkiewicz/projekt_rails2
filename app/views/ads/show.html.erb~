@@ -12,7 +12,7 @@
 
 <p>
   <b>Cena:</b>
-  <%= @ad.price %>
+  <%= @ad.price %> zł
 </p>
 
 <p>
@@ -22,10 +22,10 @@
 
 <p>
   <b>Img url:</b>
-  <%= @ad.img_url %>
+  <img src="<%= @ad.img_url %>" alt="" />
 </p>
 
-<% if current_user[:email] = 'admin@admin.com'    %>
+<% if current_user %>
 	<%= link_to 'Edytuj', edit_ad_path(@ad) %> |
 	<%= link_to 'Usuń', ad_path(@ad), :confirm => 'Czy napewno chcesz usunąć ogłoszenie?', :method => :delete %> |
 <% end %>

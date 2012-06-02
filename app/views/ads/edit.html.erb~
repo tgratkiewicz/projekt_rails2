@@ -1,7 +1,42 @@
-<h1>Editing ad</h1>
+<h1>Edycja <%= @ad.name %></h1>
 
-<%= render 'form' %>
+<%= form_for(@ad) do |f| %>
+  <% if @ad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
 
-<%= link_to 'Show', @ad %> |
-<%= link_to 'Back', ads_path %> |
+      <ul>
+      <% @ad.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nazwa" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Opis" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label "Cena" %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= current_user.email %>
+  </div>
+  <div class="field">
+    <%= f.label "Link do obrazka" %><br />
+    <%= f.text_field :img_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Zatwierdź Edycję"%>
+  </div>
+<% end %>
+<%= link_to 'Pokaż', @ad %> |
+<%= link_to 'Cofnij', ads_path %> 
 

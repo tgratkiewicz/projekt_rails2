@@ -12,7 +12,7 @@
 
 <p>
   <b>Cena:</b>
-  <%= @ad.price %>
+  <%= @ad.price %> zł
 </p>
 
 <p>
@@ -21,8 +21,7 @@
 </p>
 
 <p>
-  <b>Img url:</b>
-  <%= @ad.img_url %>
+  <img src="<%= @ad.img_url %>" alt="" />
 </p>
 
 <% if current_user %>
